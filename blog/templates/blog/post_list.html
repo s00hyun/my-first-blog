@@ -7,16 +7,13 @@
             <h1><a href="">s00hyun's blog</a></h1>
         </div>
 
+    {% for post in posts %}
         <div>
-            <p>published: 02.01.2018</p>
-            <h2><a href="">My first post</a></h2>
-            <p>첫 번째 포스트 내용</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>  <!--text에 행바뀜을 문단으로 변환하는 필터 적용-->
         </div>
+    {% endfor %}
 
-        <div>
-            <p>published: 02.01.2018</p>
-            <h2><a href="">My second post</a></h2>
-            <p>두 번째 포스트 내용</p>
-        </div>
     </body>
 </html>
